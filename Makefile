@@ -30,7 +30,7 @@ OBJ = ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_memchr.o \
 
 all: $(NAME)
 
-%.o: %.c
+%.o: %.c libft.h
 	$(CC) $(FLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ)
