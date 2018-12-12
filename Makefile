@@ -6,7 +6,7 @@
 #    By: befuhro <marvin@le-101.fr>                 +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/01/16 13:27:01 by befuhro      #+#   ##    ##    #+#        #
-#    Updated: 2018/12/12 17:31:46 by befuhro     ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/12 17:47:24 by befuhro     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -49,10 +49,11 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
+	mkdir -p obj/
 	$(CC) $(FLAGS) $(HEADERS_FLAGS) -o $@ -c $<
 
 clean:
-	/bin/rm -f $(OBJS)
+	/bin/rm -rf $(OBJS_PATH)
 
 fclean: clean
 	/bin/rm -f $(NAME)
